@@ -1,0 +1,16 @@
+services:
+  dev:
+    build:
+      context: .
+      dockerfile: docker/dev/Dockerfile
+      args:
+        USER_ID: ${UID:-1000}
+        GROUP_ID: ${GID:-1000}
+    container_name: tb-guild-bot
+    volumes:
+      - ./python_ws/:/home/dev/python_ws
+    env_file:
+      - .env
+    stdin_open: true
+    tty: true
+    restart: unless-stopped
