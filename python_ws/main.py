@@ -21,4 +21,4 @@ async def on_message(message):
     if message.content == "!hello":
         await message.channel.send("こんにちは。今日も5分だけやってみよう。")
 
-client.run(os.getenv("DISCORD_BOT_TOKEN"))
+client.run(os.getenv("DISCO_BOT_TOKEN"))
